@@ -5,10 +5,4 @@ Charafeddine ACHIR & Rafael BAPTISTA
 
 #### -
 
-The project aims to create a method of translating English phrases into corresponding sequences of emojis. Exploring the concept of vector cosine similarity to identify the most appropriate emoji for a given word. This is achieved by comparing word vectors with emoji vectors to find the closest match.
-
-Key components of the project include the use of 'emo_uni', a comprehensive library providing textual representations for each emoji, and the 'emoji' Python library, which facilitates the conversion of words into emojis and vice versa.
-
-Furthermore, the project utilizes GloVe (Global Vectors for Word Representation), an extensive database of word vectors, to encompass a broad spectrum of the English lexicon. These GloVe vectors are integrated with spaCy, a powerful tool for advanced natural language processing, which is instrumental in generating vectors for emojis.
-
-Overall, this project serves as an enriching experience, offering a deep dive into the nuances of language processing. It not only enhances understanding of natural language processing techniques but also bridges the gap between textual and visual communication. 
+The Emojislation project is focused on translating English phrases into corresponding sequences of emojis. This translation process is achieved through the application of vector cosine similarity, which identifies the most suitable emoji for each word by comparing word vectors with emoji vectors. Central to the project are two key resources: 'emo_uni', a library that provides textual representations for each emoji, and the 'emoji' Python library, enabling the conversion of words to emojis and vice versa. Additionally, the project utilizes GloVe (Global Vectors for Word Representation), an extensive database of word vectors, integrated with spaCy, a tool for natural language processing, to generate corresponding emoji vectors. This endeavor provides a comprehensive exploration into language processing, bridging the gap between textual and visual communication and enhancing the understanding of natural language processing techniques.
