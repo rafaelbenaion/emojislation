@@ -3,6 +3,8 @@ Automatic text processing in AI, Final project - Université Côte d'Azur
 
 Charafeddine ACHIR & Rafael BAPTISTA
 
+#### -
+
 The project aims to create a method of translating English phrases into corresponding sequences of emojis. Exploring the concept of vector cosine similarity to identify the most appropriate emoji for a given word. This is achieved by comparing word vectors with emoji vectors to find the closest match.
 
 Key components of the project include the use of 'emo_uni', a comprehensive library providing textual representations for each emoji, and the 'emoji' Python library, which facilitates the conversion of words into emojis and vice versa.
