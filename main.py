@@ -201,5 +201,19 @@ for sentence in updated_sentences:  # Looping through each sentence
             word = emo_get[ms]  # Get the emoji for the most similar emoji
             l.append(emoji.emojize(word, language='alias'))  # Append the emoji to the list
 
-    print(sentence)
-    display(HTML('<font size="+2">{}</font>'.format(' '.join([x for x in l]))))  # Displaying the emojis
+    #print(sentence)
+    #display(HTML('<font size="+2">{}</font>'.format(' '.join([x for x in l]))))  # Displaying the emojis
+
+    # ---------------------------------------------------------------------------------------------------- #
+    # Writing the emojis and the sentences to a html file for further validation.                          #
+    # ---------------------------------------------------------------------------------------------------- #
+
+    # Write the emojis and the senteces to a html file
+    with open('emojis.html', 'a', encoding='utf-8') as f:
+        f.write('<font size="+2">{}</font>'.format(' '.join([x for x in l])))
+        f.write('<br>')
+        f.write(sentence)
+        f.write('<input type="checkbox"/>')
+        f.write('<br>')
+        f.write('<br>')
+        f.write('<br>')
