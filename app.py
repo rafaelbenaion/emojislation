@@ -22,7 +22,11 @@ collEmojislation = db.emojislation
 @app.route('/')
 def hello_world():
 
+    # Recover data from get request
 
-    collEmojislation.insert_one({"userid": "ui"})
+    validated = request.args.get('nb_validated')
+    total     = request.args.get('total')
+
+    collEmojislation.insert_one({"total": total, "validated": validated, "date": datetime.now()})
 
     return 'Hello, World!'
