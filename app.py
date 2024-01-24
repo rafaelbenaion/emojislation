@@ -26,8 +26,15 @@ def hello_world():
 
 @app.route('/validation')
 def validation():
+    return render_template('emojis.html')
 
-    return render_template('emojis.html') # Render validation form
+@app.route('/validation2')
+def validation():
+    return render_template('emojis2.html')
+
+@app.route('/validation3')
+def validation():
+    return render_template('emojis3.html')
 
 @app.route('/validated')
 def validated():
