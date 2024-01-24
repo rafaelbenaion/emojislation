@@ -161,8 +161,7 @@ sentences = [
     "He is playing basketball.",
     "They are visiting a museum.",
     "I am reading a magazine.",
-    "The cat is purring.",
-    "Simple phrase traduction.",
+    "The cat is purring."
 ]
 
 # -------------------------------------------------------------------------------------------------------- #
@@ -212,9 +211,9 @@ for sentence in updated_sentences:  # Looping through each sentence
     # Write the emojis and the senteces to a html file
     with open('emojis.html', 'a', encoding='utf-8') as f:
         f.write('<font size="+2">{}</font>'.format(' '.join([x for x in l])))
-        f.write('<br>')
+        f.write('<br><br>')
         f.write(sentence)
-        f.write('<input type="checkbox"/>')
+        f.write('<br><input type="checkbox"/>')
         f.write('<br>')
         f.write('<br>')
         f.write('<br>')
