@@ -25,7 +25,7 @@ def hello_world():
     # Recover data from get request
 
     validated = request.args.get('nb_validated')
-    total     = request.args.get('total')
+    total     = request.args.get('nb_total')
 
     collEmojislation.insert_one({"total": total, "validated": validated, "date": datetime.now()})
 
