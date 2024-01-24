@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emojislation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 style="font-size: 90px;margin:0px;">📖</h1>
+            <h1 style="margin-top:0px;">Emojislation</h1>
+        </header>
+        <div class="translation-box">
+            <textarea id="source-text" placeholder="Insert text"></textarea>
+            <button id="translate-button">🔄</button>
+            <textarea id="translated-text" placeholder="Emojislation" readonly></textarea>
+        </div>
+    </div>
+    <footer>
+        This is a project made by <a href="https://github.com/rafaelbenaion/emojislation">Emojislation.</a>
+        <br><a href="https://emojislation.onrender.com/validation">Click here</a> to participate in the validation of the project!
+
+    </footer>
+</body>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><text y="20%" font-size="30" emoji="">&#x1F60A;</text></svg>');
+    background-repeat: repeat;
+}
+
+.container {
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.translation-box {
+    display: grid;
+    grid-gap: 10px;
+}
+
+textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    resize: vertical;
+    height: 100px;
+}
+
+#translated-text{
+    background-color: #e6e6e6;
+}
+
+button {
+    background-color: rgba(138, 157, 208, 0.48);
+    color: #343434;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 40px;
+}
+
+button:hover {
+    background-color: rgba(128, 136, 145, 0.66);
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    color: black;
+}
+
+footer a {
+    color: #8a9dd0;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+</style>
+</html>

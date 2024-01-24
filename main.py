@@ -161,7 +161,8 @@ sentences = [
     "He is playing basketball.",
     "They are visiting a museum.",
     "I am reading a magazine.",
-    "The cat is purring."
+    "The cat is purring.",
+    "Simple phrase traduction.",
 ]
 
 # -------------------------------------------------------------------------------------------------------- #
