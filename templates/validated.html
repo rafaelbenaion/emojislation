@@ -1,28 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emojislation</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Emojislation Validation</title>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1 style="font-size: 90px;margin:0px;">📖</h1>
-            <h1 style="margin-top:0px;">Emojislation</h1>
+<div class="container">
+    <header>
+ <h1 style="font-size: 90px;margin:0px;">🤩</h1>
+<h1>Emojislation Validation</h1>
+<p>Thank you, for your contribution !</p>
+<br>
+          <a class="button_back" href="https://emojislation.onrender.com">Go back to Emojislation</a>
         </header>
-        <div class="translation-box">
-            <textarea id="source-text" placeholder="Insert text"></textarea>
-            <button id="translate-button">🔄</button>
-            <textarea id="translated-text" placeholder="Emojislation" readonly></textarea>
-        </div>
-    </div>
+
+     <br>
     <footer>
         This is a project made by <a href="https://github.com/rafaelbenaion/emojislation">Emojislation.</a>
-        <br><a href="https://emojislation.onrender.com/validation">Click here</a> to participate in the validation of the project.
-
     </footer>
+
+</div>
+
 </body>
 
 <style>
@@ -32,7 +29,6 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 100vh;
     flex-direction: column;
@@ -47,6 +43,7 @@ body {
     padding: 20px;
     border-radius: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 30px 0 30px 0;
 }
 
 header {
@@ -54,25 +51,7 @@ header {
     margin-bottom: 20px;
 }
 
-.translation-box {
-    display: grid;
-    grid-gap: 10px;
-}
-
-textarea {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 16px;
-    resize: vertical;
-    height: 100px;
-}
-
-#translated-text{
-    background-color: #e6e6e6;
-}
-
-button {
+.button_back {
     background-color: rgba(138, 157, 208, 0.48);
     color: #343434;
     padding: 10px 20px;
@@ -80,21 +59,24 @@ button {
     border-radius: 14px;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-size: 40px;
+    font-size: 20px;
+    /* width size the same size as the available space in the container */
+    width: 100% !important;
+    text-decoration: none !important;
+
+
 }
 
-button:hover {
+
+.button_back:hover {
     background-color: rgba(128, 136, 145, 0.66);
 }
 footer {
     text-align: center;
     padding: 10px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
-    background-color: #f1f1f1;
     color: black;
+    margin-top:30px;
 }
 
 footer a {
@@ -105,5 +87,11 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+font {
+    background-color: #efefef;
+    padding: 10px;
+    border-radius: 18px;
+}
 </style>
+
 </html>

@@ -39,4 +39,4 @@ def validated():
 
     collEmojislation.insert_one({"total": total, "validated": validated, "date": datetime.now()})
 
-    return 'Thank you, for your contribution!'
+    return render_template('validated.html') # Render validation form

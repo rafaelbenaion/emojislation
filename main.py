@@ -213,7 +213,7 @@ for sentence in updated_sentences:  # Looping through each sentence
         f.write('<font size="+2">{}</font>'.format(' '.join([x for x in l])))
         f.write('<br><br>')
         f.write(sentence)
-        f.write('<br><input type="checkbox"/>')
+        f.write(' <input type="checkbox"/>')
         f.write('<br>')
         f.write('<br>')
         f.write('<br>')
