@@ -29,11 +29,11 @@ def validation():
     return render_template('emojis.html')
 
 @app.route('/validation2')
-def validation():
+def validation2():
     return render_template('emojis2.html')
 
 @app.route('/validation3')
-def validation():
+def validation3():
     return render_template('emojis3.html')
 
 @app.route('/validated')
