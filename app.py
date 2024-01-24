@@ -22,6 +22,16 @@ collEmojislation = db.emojislation
 @app.route('/')
 def hello_world():
 
+    return 'Hello, World!'
+
+@app.route('/validation')
+def validation():
+
+    return render_template('emojis.html')               # Render validation form
+
+@app.route('/validated')
+def validated():
+
     # Recover data from get request
 
     validated = request.args.get('nb_validated')
@@ -29,4 +39,4 @@ def hello_world():
 
     collEmojislation.insert_one({"total": total, "validated": validated, "date": datetime.now()})
 
-    return 'Hello, World!'
+    return 'Thank you, for your contribution!'
