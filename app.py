@@ -20,6 +20,7 @@ from    flask       import session
 from    flask       import render_template
 from    pymongo     import MongoClient
 from    datetime    import datetime
+from    main        import *
 
 app = Flask(__name__)
 
@@ -44,7 +45,14 @@ collEmojislation = db.emojislation
 @app.route('/')                                                                    # Home route (index.html)
 def hello_world():
 
-    return render_template('index.html')                                              # Render the home page
+    # ---------------------------------------------------------------------------------------------------- #
+    # Making a translation.                                                                                #
+    # ---------------------------------------------------------------------------------------------------- #
+
+    translation = ""
+    translation = translator("Night is shinning with stars")
+
+    return render_template('index.html',translation=translation)    # Render the home page
 
 # -------------------------------------------------------------------------------------------------------- #
 # Validation page 1.                                                                                       #

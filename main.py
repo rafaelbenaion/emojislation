@@ -40,13 +40,13 @@ print(emoji.emojize('TATIA is :thumbs_up:'))
 # The models use 300d Glove vectors trained on the Wikipedia corpus as word embeddings.                    #
 # -------------------------------------------------------------------------------------------------------- #
 
-with open('glove.6B.300d.txt', 'r', encoding='utf-8') as f:  # Opening the GloVe vectors file
+with open('glove.6B.300d.txt', 'r', encoding='utf-8') as f:                 # Opening the GloVe vectors file
 
-    for line in tqdm(f, total=400000):  # Looping through each line
+    for line in tqdm(f, total=400000):                                           # Looping through each line
 
-        parts = line.split()  # Splitting the line into parts
-        word = parts[0]  # The first part is the word
-        vec = np.array([float(v) for v in parts[1:]], dtype='f')  # The rest of the parts are the vector
+        parts = line.split()                                                 # Splitting the line into parts
+        word = parts[0]                                                         # The first part is the word
+        vec = np.array([float(v) for v in parts[1:]], dtype='f')      # The rest of the parts are the vector
 
         nlp.vocab.set_vector(word,vec)
 
@@ -55,16 +55,15 @@ with open('glove.6B.300d.txt', 'r', encoding='utf-8') as f:  # Opening the GloVe
 # -------------------------------------------------------------------------------------------------------- #
 doc_vectors = np.array([nlp(emoji).vector for emoji in e_l])
 
-
 # -------------------------------------------------------------------------------------------------------- #
 # Function to calculate the cosine similarity between two vectors.                                         #
 # -------------------------------------------------------------------------------------------------------- #
 
 def most_similar(vectors, vec):
-    cosine = lambda v1, v2: dot(v1, v2) / (norm(v1) * norm(v2))  # Defining the cosine similarity function
-    dst = np.dot(vectors, vec) / (norm(vectors) * norm(vec))  # Calculating the cosine similarity
+    cosine = lambda v1, v2: dot(v1, v2) / (norm(v1) * norm(v2))    # Defining the cosine similarity function
+    dst = np.dot(vectors, vec) / (norm(vectors) * norm(vec))             # Calculating the cosine similarity
 
-    return (np.argsort(-dst))[0], max(dst)  # The index of the most similar emoji and the similarity score
+    return (np.argsort(-dst))[0], max(dst)    # The index of the most similar emoji and the similarity score
 
 # -------------------------------------------------------------------------------------------------------- #
 # Data source generated with GPT-4.                                                                        #
@@ -133,35 +132,35 @@ sentences = [
 # So we will remove the to-be verbs and articles from each sentence.                                       #
 # -------------------------------------------------------------------------------------------------------- #
 
-words_to_replace = [" are ", " is ", " am ", " a ", " an "]  # Words to be replaced with a space
+words_to_replace = [" are ", " is ", " am ", " a ", " an "]              # Words to be replaced with a space
 
-updated_sentences = [sentence for sentence in sentences]  # Replacing the specified words in each sentence
+updated_sentences = [sentence for sentence in sentences]    # Replacing the specified words in each sentence
 
-for i, sentence in enumerate(updated_sentences):  # Looping through each sentence
+for i, sentence in enumerate(updated_sentences):                             # Looping through each sentence
     for word in words_to_replace:
         sentence = sentence.replace(word, " ")
     updated_sentences[i] = sentence
 
-updated_sentences  # Displaying the updated sentences
+updated_sentences                                                         # Displaying the updated sentences
 
 # -------------------------------------------------------------------------------------------------------- #
 # Using the GloVe vectors to find the most similar emojis for each sentence.                               #
 # -------------------------------------------------------------------------------------------------------- #
 
-for sentence in updated_sentences:  # Looping through each sentence
+for sentence in updated_sentences:                                           # Looping through each sentence
     l = []
 
-    for w in sentence.split(" "):  # Looping through each word in the sentence
-        v = nlp(w.lower()).vector  # Getting the vector for the word
-        ms, sim = most_similar(doc_vectors, v)  # Getting the most similar emoji
+    for w in sentence.split(" "):                                # Looping through each word in the sentence
+        v = nlp(w.lower()).vector                                          # Getting the vector for the word
+        ms, sim = most_similar(doc_vectors, v)                              # Getting the most similar emoji
 
         # ------------------------------------------------------------------------------------------------ #
         # Defining a threshold for the similarity score to filter out emojis that are not similar enough.  #
         # ------------------------------------------------------------------------------------------------ #
 
-        if (sim > 0.0115):  # If the similarity score is greater than the threshold
-            word = emo_get[ms]  # Get the emoji for the most similar emoji
-            l.append(emoji.emojize(word, language='alias'))  # Append the emoji to the list
+        if (sim > 0.0115):                           # If the similarity score is greater than the threshold
+            word = emo_get[ms]                                    # Get the emoji for the most similar emoji
+            l.append(emoji.emojize(word, language='alias'))                   # Append the emoji to the list
 
     #print(sentence)
     #display(HTML('<font size="+2">{}</font>'.format(' '.join([x for x in l]))))  # Displaying the emojis
@@ -179,3 +178,28 @@ for sentence in updated_sentences:  # Looping through each sentence
         f.write('<br>')
         f.write('<br>')
         f.write('<br>')
+
+# -------------------------------------------------------------------------------------------------------- #
+# Function to translate a sentence to emojis.                                                              #
+# -------------------------------------------------------------------------------------------------------- #
+def translator(sentence):
+
+    l = []
+
+    for w in sentence.split(" "):                                # Looping through each word in the sentence
+
+        v = nlp(w.lower()).vector                                          # Getting the vector for the word
+        ms, sim = most_similar(doc_vectors, v)                              # Getting the most similar emoji
+
+        # ------------------------------------------------------------------------------------------------ #
+        # Defining a threshold for the similarity score to filter out emojis that are not similar enough.  #
+        # ------------------------------------------------------------------------------------------------ #
+
+        if (sim > 0.0115):                           # If the similarity score is greater than the threshold
+            word = emo_get[ms]                                    # Get the emoji for the most similar emoji
+            l.append(emoji.emojize(word, language='alias'))                   # Append the emoji to the list
+
+    # For each emoji in the list, transform in a single html string
+    html = '<font size="+2">{}</font>'.format(' '.join([x for x in l]))
+    
+    return html
