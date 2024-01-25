@@ -8,8 +8,6 @@
 import numpy as np
 import emoji
 import spacy
-import matplotlib.pyplot as plt
-from IPython.core.display import display, HTML
 from emo_uni import emo_list,emo_get
 from tqdm import tqdm
 from numpy import dot
