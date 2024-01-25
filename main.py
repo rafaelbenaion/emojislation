@@ -9,6 +9,7 @@ import numpy as np
 import emoji
 import spacy
 from emo_uni import emo_list,emo_get
+from IPython.display import HTML, display
 from tqdm import tqdm
 from numpy import dot
 from numpy.linalg import norm
