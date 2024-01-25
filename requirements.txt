@@ -3,3 +3,5 @@ Gunicorn
 flask-mqtt
 flask-pymongo
 numpy
+emoji
+spacy
