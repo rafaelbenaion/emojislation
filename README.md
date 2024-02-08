@@ -1,7 +1,7 @@
 # Emojislation - Project TATIA
 Automatic text processing in AI, Final project - Université Côte d'Azur
 
-Charafeddine ACHIR & Rafael BAPTISTA
+Charaf ACHIR & Rafael BAPTISTA
 
 #### -
 
